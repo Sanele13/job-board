@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="ion-margin-top ion-padding-horizontal">
+      <ion-buttons slot="start">
+        <ion-menu-button color="primary"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title class="ion-text-center">
+        Hi, Sanele
+      </ion-title>
+
+      <ion-avatar>
+        <img src="./assets/profile_pic.png" />
+      </ion-avatar>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div id="header-text">
+    Find your <ion-text color="primary">dream job</ion-text> here.
+  </div>
 </ion-content>
