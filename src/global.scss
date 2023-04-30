@@ -25,6 +25,48 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: url('assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'PoppinsSemiBold';
+  src: url('assets/fonts/Poppins/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'PoppinsRegular';
+  src: url('assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+.font-family-poppins-medium {
+  font-family: 'PoppinsMedium', serif;
+}
+
+.font-family-poppins-semi-bold {
+  font-family: 'PoppinsSemiBold', serif;
+}
+
+.font-family-poppins-regular {
+  font-family: 'PoppinsRegular', serif;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
 
 .header-md::after {
   background-image: none;
@@ -46,4 +88,12 @@ ion-toolbar {
 
 .font-size-20 {
   font-size: 20px;
+}
+
+.color-light-grey {
+  color: rgba(26, 26, 26, 0.4);;
+}
+
+.display-flex {
+  display: flex;
 }

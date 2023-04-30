@@ -17,25 +17,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="header-text">
+  <div id="header-text" class="font-family-poppins-semi-bold font-size-20">
     Find your <ion-text color="primary">dream job</ion-text> here.
   </div>
 
   <div id="recommendations" class="ion-padding">
     <ion-grid class="ion-text-justify">
-      <ion-row>
+      <ion-row class="font-family-poppins-medium">
         <ion-col size-xs="9">
-          <ion-text color="dark">Based on your skills</ion-text>
+          <ion-text color="dark" class="font-size-20">Based on your skills</ion-text>
         </ion-col>
         <ion-col size-xs="3">
-          <ion-text color="primary" class="ion-text-right">View all</ion-text>`
+          <ion-text color="primary" class="ion-text-right font-size-16">View all</ion-text>`
         </ion-col>
       </ion-row>
     </ion-grid>
 
   <div class="ion-padding job-cards-container">
-    <app-job-card></app-job-card>
-    <app-job-card></app-job-card>
+    <ng-container *ngFor="let job of recommendedJobs">
+      <app-job-card [job]="job"></app-job-card>
+    </ng-container>
   </div>
 
   </div>
