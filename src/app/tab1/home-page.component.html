@@ -1,21 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <div class="ion-margin-top ion-padding-horizontal">
-      <ion-buttons slot="start">
-        <ion-menu-button color="primary"></ion-menu-button>
-      </ion-buttons>
-
-      <ion-title class="ion-text-center">
-        Hi {{user ? ", " + user.name : ""}}
-      </ion-title>
-
-      <ion-avatar>
-        <img src="./assets/profile_pic.png" />
-      </ion-avatar>
-    </div>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content [fullscreen]="true">
   <div id="header-text" class="font-family-poppins-semi-bold font-size-20">
     Find your <ion-text color="primary">dream job</ion-text> here.

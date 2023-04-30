@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import {JobCardComponent} from "../job-card/job-card.component";
+import {HeaderModule} from "../header/header.module";
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {JobCardComponent} from "../job-card/job-card.component";
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    HeaderModule
   ],
     declarations: [HomePage, JobCardComponent]
 })
