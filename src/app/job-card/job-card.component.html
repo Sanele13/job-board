@@ -1,0 +1,30 @@
+<div class="job-card">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" class="ion-padding">
+        <img src="{{ job.logo }}" alt="logo" class="logo ion-padding-bottom" />
+      </ion-col>
+      <ion-col size-xs="12" class="ion-padding-start">
+        <span class="job-title">{{ job.title }}</span>
+      </ion-col>
+      <ion-col size-xs="12" class="ion-padding-start">
+        <span class="company">{{ job.company }}</span>
+      </ion-col>
+      <ion-col size-xs="12">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <span class="date">{{ job.postedAt }}</span>
+            </ion-col>
+            <ion-col>
+              <span class="type">{{ job.type }}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col size-xs="12" class="ion-padding-start">
+        <span class="location">{{ job.location }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

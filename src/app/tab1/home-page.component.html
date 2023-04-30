@@ -6,7 +6,7 @@
       </ion-buttons>
 
       <ion-title class="ion-text-center">
-        Hi, Sanele
+        Hi {{user ? ", " + user.name : ""}}
       </ion-title>
 
       <ion-avatar>
@@ -19,5 +19,24 @@
 <ion-content [fullscreen]="true">
   <div id="header-text">
     Find your <ion-text color="primary">dream job</ion-text> here.
+  </div>
+
+  <div id="recommendations" class="ion-padding">
+    <ion-grid class="ion-text-justify">
+      <ion-row>
+        <ion-col size-xs="9">
+          <ion-text color="dark">Based on your skills</ion-text>
+        </ion-col>
+        <ion-col size-xs="3">
+          <ion-text color="primary" class="ion-text-right">View all</ion-text>`
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <div class="ion-padding job-cards-container">
+    <app-job-card></app-job-card>
+    <app-job-card></app-job-card>
+  </div>
+
   </div>
 </ion-content>

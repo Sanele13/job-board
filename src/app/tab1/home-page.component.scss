@@ -3,3 +3,8 @@
   padding: 3em;
   font-weight: 900;
 }
+
+.job-cards-container {
+  display: flex;
+  overflow-y: scroll;
+}
