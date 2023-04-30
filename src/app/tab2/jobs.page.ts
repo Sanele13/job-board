@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Job} from '../../models/job.model';
 import {JobService} from '../../services/job.service';
+import {ModalController} from "@ionic/angular";
+import {JobDetailPage} from "../job-detail/job-detail.page";
 
 @Component({
   selector: 'app-tab2',
@@ -10,10 +12,20 @@ import {JobService} from '../../services/job.service';
 export class JobsPage {
   jobs: Job[] = [];
 
-  constructor(private jobService: JobService) {
+  constructor(private jobService: JobService, private modalCtrl: ModalController) {
     this.jobService.getJobs().subscribe(jobs => {
       this.jobs = jobs;
     });
+  }
+
+  async onJobClick(job: Job) {
+    const modal = await this.modalCtrl.create({
+      component: JobDetailPage,
+      componentProps: {
+        job
+      }
+    });
+    await modal.present();
   }
 
 }

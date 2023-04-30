@@ -3,7 +3,7 @@
   <div class="ion-padding job-cards-container">
     <ion-list lines="none">
       <ion-item-sliding *ngFor="let job of jobs" class="ion-margin-bottom">
-        <ion-item class="job-card" color="primary" button detail="true" href="tabs/jobs/{{job.id}}">
+        <ion-item class="job-card" color="primary" button detail="true" (click)="onJobClick(job)">
           <app-job-listing-card [job]="job"></app-job-listing-card>
         </ion-item>
         <ion-item-options>
