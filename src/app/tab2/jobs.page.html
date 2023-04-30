@@ -1,0 +1,24 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <div class="ion-padding job-cards-container">
+    <ion-list lines="none">
+      <ion-item-sliding *ngFor="let job of jobs" class="ion-margin-bottom">
+        <ion-item class="job-card" color="primary" button detail="true" href="tabs/jobs/{{job.id}}">
+          <app-job-listing-card [job]="job"></app-job-listing-card>
+        </ion-item>
+        <ion-item-options>
+          <ion-grid>
+            <ion-row class="display-flex">
+              <ion-col size="12" class="ion-padding-top">
+                <ion-icon name="heart-outline"></ion-icon>
+              </ion-col>
+              <ion-col size="12">
+                <ion-icon name="share-social-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+</ion-content>

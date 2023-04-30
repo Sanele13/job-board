@@ -1,0 +1,24 @@
+<div class="job-card" *ngIf="job">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="2">
+        <img src="{{job.company.logo}}" />
+      </ion-col>
+      <ion-col size-xs="10">
+        <ion-text class="font-family-poppins-medium font-size-16ont">{{job.title}}</ion-text>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-xs="12" class="display-flex ion-align-items-center">
+              <ion-icon name="location-outline" aria-hidden="true">
+              </ion-icon><ion-text class="font-family-poppins-regular font-size-12 color-light-grey">{{ job.location }}</ion-text>
+            </ion-col>
+            <ion-col size-xs="12" class="display-flex ion-align-items-center">
+              <ion-icon name="cash-outline" aria-hidden="true"></ion-icon>
+              <ion-text class="font-family-poppins-regular font-size-12 color-light-grey">{{ job.salary | currency:'R'}} - {{ job.salary | currency:'R'}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

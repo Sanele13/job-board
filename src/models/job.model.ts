@@ -1,10 +1,16 @@
+class Company {
+  name: string;
+  logo?: string;
+}
+
 export class Job {
+  id: number;
   title: string;
   logo?: string;
   location: string;
   type: string;
   postedAt: string;
-  company: string;
+  company: Company;
   description: string;
   requirements: string[];
   responsibilities: string[];

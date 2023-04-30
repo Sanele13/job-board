@@ -2,13 +2,15 @@
   <ion-grid>
     <ion-row>
       <ion-col size-xs="12" class="ion-padding">
-        <img src="{{ job.logo }}" alt="logo" class="logo ion-padding-bottom" />
+        <ion-avatar class="company-logo">
+          <img [src]="job.company.logo" alt="Company Logo">
+        </ion-avatar>
       </ion-col>
       <ion-col size-xs="12" class="ion-padding-start">
         <span class="job-title font-size-16 font-family-poppins-medium">{{ job.title }}</span>
       </ion-col>
       <ion-col size-xs="12" class="ion-padding-start">
-        <ion-text class="company font-family-poppins-medium font-size-16 color-light-grey">{{ job.company }}</ion-text>
+        <ion-text class="company font-family-poppins-medium font-size-16 color-light-grey">{{ job.company.name }}</ion-text>
       </ion-col>
       <ion-col size-xs="12">
         <ion-grid>
