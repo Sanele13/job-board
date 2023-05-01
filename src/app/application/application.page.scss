@@ -1,0 +1,29 @@
+ion-input {
+  font-family: "PoppinsMedium", serif !important;
+  color: rgba(26, 26, 26, 0.65);
+}
+
+.cv-upload-box {
+  background-color: var(--ion-color-primary);
+  height: 5em;
+  border-radius: 1em;
+  color: rgba(26, 26, 26, 0.65);
+}
+
+.upload-button {
+  width: 3em;
+  border-radius: 1.5em;
+  height: 3em;
+  background-color: var(--ion-color-primary-dark) !important;
+  color: var(--ion-color-primary-dark-contrast) !important;
+
+  ion-icon {
+    font-size: 1.5em;
+  }
+}
+
+.pdf-logo-container {
+  img {
+    width: 2em;
+  }
+}

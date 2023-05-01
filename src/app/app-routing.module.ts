@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'job-detail',
     loadChildren: () => import('./job-detail/job-detail.module').then( m => m.JobDetailPageModule)
+  },
+  {
+    path: 'application',
+    loadChildren: () => import('./application/application.module').then( m => m.ApplicationPageModule)
   }
 ];
 @NgModule({

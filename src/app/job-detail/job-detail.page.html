@@ -19,13 +19,13 @@
           </div>
           <ion-grid>
             <ion-row>
-              <ion-col size-xs="11" push-xs="1" class="display-flex ion-align-items-center">
+              <ion-col size-xs="10" push-xs="2" class="display-flex ion-align-items-center">
                 <ion-icon name="location-outline" aria-hidden="true">
-                </ion-icon><ion-text class="font-family-poppins-regular font-size-12 color-light-grey">{{ job.location }}</ion-text>
+                </ion-icon><ion-text class="font-family-poppins-semi-bold font-size-12 grey-65">{{ job.location }}</ion-text>
               </ion-col>
-              <ion-col size-xs="11" push-xs="1" class="display-flex ion-align-items-center">
+              <ion-col size-xs="10" push-xs="2" class="display-flex ion-align-items-center">
                 <ion-icon name="cash-outline" aria-hidden="true"></ion-icon>
-                <ion-text class="font-family-poppins-regular font-size-12 color-light-grey">{{ job.salary | currency:'R'}} - {{ job.salary | currency:'R'}}</ion-text>
+                <ion-text class="font-family-poppins-semi-bold font-size-12 grey-65">{{ job.salary | currency:'R'}} - {{ job.salary | currency:'R'}}</ion-text>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -36,14 +36,14 @@
     <ion-row>
       <ion-col size-xs="12" class="ion-padding-top">
         <ion-text class="font-family-poppins-medium font-size-16" color="primary">Job Description</ion-text>
-        <div class="font-family-poppins-regular font-size-12 color-light-grey ion-padding-top">
+        <div class="font-family-poppins-medium font-size-13 grey-65 ion-padding-top">
           <div innerHTML="{{ job.description }}"></div>
         </div>
       </ion-col>
 
       <ion-col size-xs="12" class="ion-padding-top" *ngIf="job.requirements && job.requirements.length > 0">
         <ion-text class="font-family-poppins-medium font-size-16" color="primary">Requirements</ion-text>
-        <div class="font-family-poppins-regular font-size-12 color-light-grey ion-padding-top">
+        <div class="font-family-poppins-medium font-size-13 grey-65 ion-padding-top">
           <ul class="ion-padding-start">
             <li *ngFor="let requirement of job.requirements">{{ requirement }}</li>
           </ul>
@@ -52,7 +52,7 @@
 
       <ion-col size-xs="12" class="ion-padding-top" *ngIf="job.responsibilities && job.responsibilities.length > 0">
         <ion-text class="font-family-poppins-medium font-size-16" color="primary">Responsibilities</ion-text>
-        <div class="font-family-poppins-regular font-size-12 color-light-grey ion-padding-top">
+        <div class="font-family-poppins-medium font-size-13 grey-65 ion-padding-top">
           <ul class="ion-padding-start">
             <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
           </ul>
@@ -61,7 +61,7 @@
 
       <ion-col size-xs="12" class="ion-padding-top" *ngIf="job.perks && job.perks.length > 0">
         <ion-text class="font-family-poppins-medium font-size-16" color="primary">Perks</ion-text>
-        <div class="font-family-poppins-regular font-size-12 color-light-grey ion-padding-top">
+        <div class="font-family-poppins-medium font-size-13 grey-65 ion-padding-top">
           <ul class="ion-padding-start">
             <li *ngFor="let perk of job.perks">{{ perk }}</li>
           </ul>
@@ -70,7 +70,7 @@
 
       <ion-col size-xs="12" class="ion-padding-top" *ngIf="job.benefits && job.benefits.length > 0">
         <ion-text class="font-family-poppins-medium font-size-16" color="primary">Benefits</ion-text>
-        <div class="font-family-poppins-regular font-size-12 color-light-grey ion-padding-top">
+        <div class="font-family-poppins-medium font-size-13 grey-65 ion-padding-top">
           <ul class="ion-padding-start">
             <li *ngFor="let benefit of job.benefits">{{ benefit }}</li>
           </ul>
@@ -79,7 +79,7 @@
     </ion-row>
     <ion-row>
       <ion-col size-xs="12">
-        <button class="apply-button" (click)="apply()">Apply</button>
+        <button class="apply-button font-family-poppins-semi-bold font-size-14" (click)="apply(job)">Apply now</button>
       </ion-col>
     </ion-row>
   </ion-grid>

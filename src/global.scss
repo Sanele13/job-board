@@ -68,6 +68,10 @@
   font-size: 12px;
 }
 
+.font-size-13 {
+  font-size: 13px;
+}
+
 .header-md::after {
   background-image: none;
 }
@@ -96,4 +100,20 @@ ion-toolbar {
 
 .display-flex {
   display: flex;
+}
+
+ion-icon[name="arrow-back-outline"] {
+  font-size: 2.5em;
+}
+
+.apply-button, .send-button {
+  background-color: var(--ion-color-primary-dark);
+  width: 100%;
+  height: 3em;
+  color: var(--ion-color-primary-dark-contrast);
+  border-radius: 2em;
+}
+
+.grey-65 {
+  color: rgba(26, 26, 26, 0.65);
 }
