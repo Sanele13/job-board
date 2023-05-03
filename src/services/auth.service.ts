@@ -23,6 +23,10 @@ export class AuthService {
     return this.user;
   }
 
+  register(username: string, password: string, confirmPassword: string): Observable<User> {
+    return this.user;
+  }
+
   logout() {
 
   }

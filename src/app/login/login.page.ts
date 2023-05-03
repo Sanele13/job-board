@@ -19,12 +19,8 @@ export class LoginPage implements OnInit {
   }
 
   login(): void {
-    this.authService.login(this.username, this.password).subscribe((user: User) => {
-      console.log(user);
+    this.authService.login(this.username, this.password).subscribe(_ => {
+      this.router.navigate(['tabs', 'home']);
     });
-  }
-
-  goToSignUp() {
-    this.router.navigate(['register']);
   }
 }
