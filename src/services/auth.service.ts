@@ -19,8 +19,8 @@ export class AuthService {
     });
   }
 
-  login(email: string, password: string): void {
-
+  login(email: string, password: string): Observable<User> {
+    return this.user;
   }
 
   logout() {

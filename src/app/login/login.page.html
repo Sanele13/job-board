@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="container">
+
+    <ion-grid class="form-container display-flex ion-justify-content-center">
+      <ion-row>
+        <ion-col size-xs="12" class="ion-text-center ion-margin-bottom">
+          <ion-text class="font-family-poppins-semi-bold font-size-32" color="primary">Sign In</ion-text>
+        </ion-col>
+
+        <ion-col size-xs="12" class="ion-padding">
+          <ion-item class="ion-no-padding">
+            <ion-input type="email" placeholder="Username"><ion-icon name="person" slot="start"></ion-icon></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" class="ion-padding">
+          <ion-item class="ion-no-padding">
+            <ion-input type="password" placeholder="Password"><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" class="ion-padding-end ion-text-end">
+          <ion-text class="font-family-poppins-regular font-size-14" color="primary">Forgot Password?</ion-text>
+        </ion-col>
+
+        <ion-col size-xs="12" class="ion-no-padding ion-margin-top ion-margin-bottom">
+          <button class="font-family-poppins-semi-bold sign-in-button" (click)="login()">Sign In</button>
+        </ion-col>
+
+        <ion-col size-xs="12" class="ion-padding ion-text-center">
+          <ion-text class="font-family-poppins-regular font-size-14" color="primary">Don't have an account? <ion-text class="font-family-poppins-semi-bold font-size-14" color="primary" (click)="goToSignUp()">Sign Up</ion-text></ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div id="left-circle-primary"></div>
+    <div id="right-circle-primary"></div>
+    <div id="right-circle-primary-dark"></div>
+    <div id="bottom-left-circle-primary"></div>
+    <div id="bottom-left-circle-primary-dark"></div>
+  </div>
+</ion-content>

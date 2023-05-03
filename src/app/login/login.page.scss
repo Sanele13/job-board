@@ -1,0 +1,86 @@
+#left-circle-primary {
+  position: absolute;
+  top: -7em;
+  left: -6em;
+  width: 200px;
+  height: 200px;
+  background-color: var(--ion-color-primary);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#right-circle-primary {
+  position: absolute;
+  top: -8em;
+  right: -3em;
+  width: 200px;
+  height: 200px;
+  background-color: var(--ion-color-primary);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#right-circle-primary-dark {
+  position: absolute;
+  top: -5em;
+  right: -8em;
+  width: 200px;
+  height: 200px;
+  background-color: #66a96b;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#bottom-left-circle-primary {
+  position: absolute;
+  bottom: -3em;
+  left: -5em;
+  width: 200px;
+  height: 200px;
+  background-color: var(--ion-color-primary);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#bottom-left-circle-primary-dark {
+  position: absolute;
+  bottom: -6em;
+  left: -1em;
+  width: 200px;
+  height: 200px;
+  background-color: #66a96b;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.form-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+ion-input {
+  ion-icon {
+    background-color: var(--ion-color-primary-dark);
+    padding: 1em;
+    border-radius: 0.7em;
+    margin-right: 0.5em;
+    color: var(--ion-color-primary-dark-contrast);
+  }
+}
+
+.sign-in-button {
+  background-color: var(--ion-color-primary-dark);
+  width: 100%;
+  height: 3em;
+  color: var(--ion-color-primary-dark-contrast);
+  border-radius: 2em;
+}
