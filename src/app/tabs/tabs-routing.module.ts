@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('../job-detail/job-detail.module').then(m => m.JobDetailPageModule),
       },
       {
-        path: 'tab3',
+        path: 'profile',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {

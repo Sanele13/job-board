@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-grid class="ion-margin-top container">
+    <ion-row class="ion-padding">
+      <ion-col size-xs="4" class="ion-padding">
+        <ion-avatar>
+          <img src="assets/profile_pic.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size-xs="8" class="ion-padding">
+        <ion-row>
+          <ion-col size-xs="12" class="font-size-14 grey-65 ion-padding-start">
+            <div class="font-family-poppins-semi-bold">{{user.name}} {{user.lastName}}</div>
+            <div class="font-family-poppins-regular">{{user.email}}</div>
+            <div class="font-family-poppins-regular">{{user.cellNumber}}</div>
+          </ion-col>
+          <ion-col size-xs="12">
+            <button class="font-family-poppins-semi-bold edit-button" (click)="edit()">Edit</button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
