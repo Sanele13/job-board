@@ -1,0 +1,65 @@
+.profile-pic-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .profile-pic {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  img {
+    width: 7em;
+    height: 7em;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.profile-pic-edit {
+  font-size: 26px;
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  cursor: pointer;
+}
+
+.camera-button {
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+  background-color: var(--ion-color-primary-dark);
+  color: var(--ion-color-primary-dark-contrast);
+
+  ion-icon {
+    font-size: 2em;
+  }
+}
+
+ion-item {
+  &.item-disabled {
+    opacity: 1;
+
+    ion-input {
+      opacity: 0.3;
+    }
+  }
+
+  ion-input {
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 14px;
+  }
+
+  ion-label {
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 16px;
+  }
+}

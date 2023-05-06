@@ -41,7 +41,7 @@
 }
 
 .font-family-poppins-medium {
-  font-family: 'PoppinsMedium', serif;
+  font-family: 'PoppinsMedium', serif !important;
 }
 
 .font-family-poppins-semi-bold {
@@ -114,7 +114,7 @@ ion-icon[name="arrow-back-outline"] {
   font-size: 2.5em;
 }
 
-.apply-button, .send-button {
+.apply-button, .send-button, .save-button {
   background-color: var(--ion-color-primary-dark);
   width: 100%;
   height: 3em;

@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: ProfilePage,
+  },
+  {
+    path: 'edit',
+    loadChildren: () => import('./profile-edit/profile-edit.module').then( m => m.ProfileEditPageModule)
   }
 ];
 

@@ -14,7 +14,8 @@ export class AuthService {
         name: 'John',
         lastName: 'Doe',
         email: 'john.doe@test.com',
-        cellNumber: '1234567890'
+        contactNumber: '1234567890',
+        avatar: '/assets/profile_pic.png'
       });
     });
   }
@@ -33,5 +34,11 @@ export class AuthService {
 
   getUser(): Observable<User> {
     return this.user;
+  }
+
+  save(user: User): Observable<User> {
+    return new Observable<User>(subscriber => {
+      subscriber.next(user);
+    });
   }
 }

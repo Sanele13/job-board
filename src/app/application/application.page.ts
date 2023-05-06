@@ -25,7 +25,7 @@ export class ApplicationPage implements OnInit {
     this.authService.getUser().subscribe(user => {
       this.name = `${user.name} ${user.lastName}`;
       this.email = user.email;
-      this.contactNumber = user.cellNumber;
+      this.contactNumber = user.contactNumber;
     });
   }
 

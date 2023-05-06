@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user.model';
 import {AuthService} from '../../services/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tab3',
@@ -10,7 +11,7 @@ import {AuthService} from '../../services/auth.service';
 export class ProfilePage implements OnInit {
   user: User;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.getUser().subscribe(user => {
@@ -19,6 +20,6 @@ export class ProfilePage implements OnInit {
   }
 
   edit() {
-
+    this.router.navigate(['/tabs/profile/edit']);
   }
 }

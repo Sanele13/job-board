@@ -3,5 +3,6 @@ export class User {
   name: string;
   lastName: string;
   email: string;
-  cellNumber?: string;
+  contactNumber?: string;
+  avatar: string;
 }
