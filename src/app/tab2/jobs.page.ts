@@ -28,4 +28,14 @@ export class JobsPage {
     await modal.present();
   }
 
+  like(job: Job) {
+    this.jobService.likeJob(job).subscribe(likedJob => {
+      const index = this.jobs.findIndex(j => j.id === likedJob.id);
+      this.jobs[index] = likedJob;
+    });
+  }
+
+  share(job: Job) {
+
+  }
 }

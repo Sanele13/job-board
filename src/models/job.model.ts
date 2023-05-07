@@ -18,4 +18,5 @@ export class Job {
   perks: string[];
   salary: number;
   remote: boolean;
+  liked?: boolean;
 }

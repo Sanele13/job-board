@@ -10,10 +10,10 @@
           <ion-grid>
             <ion-row class="display-flex">
               <ion-col size="12" class="ion-padding-top">
-                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon name="{{job.liked ? 'heart' : 'heart-outline'}}" (click)="like(job)"></ion-icon>
               </ion-col>
               <ion-col size="12">
-                <ion-icon name="share-social-outline"></ion-icon>
+                <ion-icon name="share-social-outline" (click)="share(job)"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-grid>

@@ -48,7 +48,8 @@ export class JobService {
           'Free Tesla'],
         perks: [],
         salary: 100000,
-        remote: true
+        remote: true,
+        liked: false
       },
         {
           id: 2,
@@ -83,8 +84,16 @@ export class JobService {
             'Stock Options'],
           perks: [],
           salary: 150000,
-          remote: true
+          remote: true,
+          liked: false
         }]);
+    });
+  }
+
+  likeJob(job: Job): Observable<Job> {
+    job.liked = !job.liked;
+    return new Observable<any>(subscriber => {
+      subscriber.next(job);
     });
   }
 }
