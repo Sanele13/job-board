@@ -7,28 +7,38 @@
           <ion-text class="font-family-poppins-semi-bold font-size-32" color="primary">Sign Up</ion-text>
         </ion-col>
 
-        <ion-col size-xs="12" class="ion-padding">
+        <ion-col size-xs="12" class="ion-padding-start">
           <ion-item class="ion-no-padding">
-            <ion-input type="email" placeholder="Username" #username><ion-icon name="person" slot="start"></ion-icon></ion-input>
+            <ion-input type="email" placeholder="First Name" [(ngModel)]="user.name"><ion-icon name="person" slot="start"></ion-icon></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12" class="ion-padding">
+        <ion-col size-xs="12" class="ion-padding-start">
           <ion-item class="ion-no-padding">
-            <ion-input type="password" placeholder="Password" #password><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
+            <ion-input type="email" placeholder="Last Name" [(ngModel)]="user.lastName"><ion-icon name="person" slot="start"></ion-icon></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12" class="ion-padding">
+        <ion-col size-xs="12" class="ion-padding-start">
           <ion-item class="ion-no-padding">
-            <ion-input type="password" placeholder="Confirm Password" #confirmPassword><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
+            <ion-input type="email" placeholder="Username" [(ngModel)]="user.email"><ion-icon name="person" slot="start"></ion-icon></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" class="ion-padding-start">
+          <ion-item class="ion-no-padding">
+            <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" class="ion-padding-start">
+          <ion-item class="ion-no-padding">
+            <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="user.confirmPassword"><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
           </ion-item>
         </ion-col>
 
         <ion-col size-xs="12" class="ion-no-padding ion-margin-top ion-margin-bottom">
-          <button class="font-family-poppins-semi-bold sign-in-button" (click)="register(username.value, password.value, confirmPassword.value)">Sign Up</button>
+          <button class="font-family-poppins-semi-bold sign-in-button" (click)="register()">Sign Up</button>
         </ion-col>
 
         <ion-col size-xs="12" class="ion-text-center ion-margin-bottom">
-          <ion-text class="font-family-poppins-regular font-size-16" color="primary">Already have an account? <a routerLink="/login" class="font-family-poppins-semi-bold font-size-20">Sign In</a></ion-text>
+          <ion-text class="font-family-poppins-regular font-size-14" color="primary">Already have an account? <a routerLink="/login" class="font-family-poppins-semi-bold font-size-14">Sign In</a></ion-text>
         </ion-col>
       </ion-row>
     </ion-grid>

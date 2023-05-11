@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {User} from '../models/user.model';
+import {AuthData, User} from '../models/user.model';
+import {HttpClient} from '@angular/common/http';
+import {tap} from 'rxjs/operators';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +11,7 @@ import {User} from '../models/user.model';
 export class AuthService {
   private readonly user: Observable<User> = new Observable<User>();
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.user = new Observable<User>(subscriber => {
       subscriber.next({
         name: 'John',
@@ -20,12 +23,16 @@ export class AuthService {
     });
   }
 
-  login(email: string, password: string): Observable<User> {
-    return this.user;
+  login(authUser: AuthData): Observable<User> {
+    return this.httpClient.post<User>(`${environment.apiUrl}/auth/login`, authUser).pipe(
+      tap(user => {
+        localStorage.setItem('user', JSON.stringify(user));
+      })
+    );
   }
 
-  register(username: string, password: string, confirmPassword: string): Observable<User> {
-    return this.user;
+  register(authUser: AuthData): Observable<AuthData> {
+    return this.httpClient.post<AuthData>(`${environment.apiUrl}/auth/register`, authUser);
   }
 
   logout() {

@@ -7,18 +7,18 @@
           <ion-text class="font-family-poppins-semi-bold font-size-32" color="primary">Sign In</ion-text>
         </ion-col>
 
-        <ion-col size-xs="12" class="ion-padding">
+        <ion-col size-xs="12" class="ion-padding-start">
           <ion-item class="ion-no-padding">
-            <ion-input type="email" placeholder="Username"><ion-icon name="person" slot="start"></ion-icon></ion-input>
+            <ion-input type="email" placeholder="Username" [(ngModel)]="authData.email"><ion-icon name="person" slot="start"></ion-icon></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size-xs="12" class="ion-padding">
+        <ion-col size-xs="12" class="ion-padding-start">
           <ion-item class="ion-no-padding">
-            <ion-input type="password" placeholder="Password"><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
+            <ion-input type="password" placeholder="Password" [(ngModel)]="authData.password"><ion-icon name="lock-closed" slot="start"></ion-icon></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size-xs="12" class="ion-padding-end ion-text-end">
-          <ion-text class="font-family-poppins-regular font-size-16" color="primary">Forgot Password?</ion-text>
+          <ion-text class="font-family-poppins-regular font-size-14" color="primary">Forgot Password?</ion-text>
         </ion-col>
 
         <ion-col size-xs="12" class="ion-no-padding ion-margin-top ion-margin-bottom">
@@ -26,7 +26,7 @@
         </ion-col>
 
         <ion-col size-xs="12" class="ion-padding ion-text-center">
-          <ion-text class="font-family-poppins-regular font-size-16" color="primary">Don't have an account? <a class="font-family-poppins-semi-bold font-size-18" routerLink="/register">Sign Up</a></ion-text>
+          <ion-text class="font-family-poppins-regular font-size-14" color="primary">Don't have an account? <a class="font-family-poppins-semi-bold font-size-14" routerLink="/register">Sign Up</a></ion-text>
         </ion-col>
       </ion-row>
     </ion-grid>
