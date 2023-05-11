@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {User} from '../../../models/user.model';
 import {AuthService} from '../../../services/auth.service';
 import {ToastController} from '@ionic/angular';
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-profile-edit',
@@ -11,9 +12,12 @@ import {ToastController} from '@ionic/angular';
 })
 export class ProfileEditPage implements OnInit {
 
-  user: User;
+  user: User = new User();
+  file: File;
 
-  constructor(private router: Router, private authService: AuthService, private toastController: ToastController) { }
+  constructor(private router: Router, private authService: AuthService,
+              private toastController: ToastController,
+              private userService: UserService) { }
 
   ngOnInit(): void {
     this.authService.getUser().subscribe(user => {
@@ -26,21 +30,34 @@ export class ProfileEditPage implements OnInit {
   }
 
   onFileSelected($event: Event): void {
-    const file = ($event.target as HTMLInputElement).files[0];
+    this.file = ($event.target as HTMLInputElement).files[0];
 
     const reader = new FileReader();
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(this.file);
     reader.onload = () => {
       this.user.avatar = reader.result as string;
     };
   }
 
   save(): void {
-    this.authService.save(this.user).subscribe(() => {
-      this.presentToast().then(() => {
-        this.router.navigate(['/tabs/profile']);
+    if (this.file) {
+      this.userService.uploadAvatar(this.file).subscribe(user => {
+        this.user.avatar = user.avatar;
+
+        this.authService.save(this.user).subscribe(u => {
+          this.user = u;
+          this.presentToast().then(() => {
+            this.router.navigate(['/tabs/profile']);
+          });
+        });
       });
-    });
+    } else {
+      this.authService.save(this.user).subscribe(() => {
+        this.presentToast().then(() => {
+          this.router.navigate(['/tabs/profile']);
+        });
+      });
+    }
   }
 
   async presentToast() {
@@ -52,5 +69,9 @@ export class ProfileEditPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  getRefresherValue(): string {
+    return this.user.avatar && this.user.avatar.includes('.png?') ? '&val=' + new Date().getTime() : '?val=' + new Date().getTime();
   }
 }

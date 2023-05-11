@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/user.model';
 import {AuthService} from '../../services/auth.service';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab3',
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['tab3.page.scss']
 })
 export class ProfilePage implements OnInit {
-  user: User;
+  user: User = new User();
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -21,5 +21,9 @@ export class ProfilePage implements OnInit {
 
   edit() {
     this.router.navigate(['/tabs/profile/edit']);
+  }
+
+  getRefresherValue(): string {
+    return this.user.avatar && this.user.avatar.includes('.png?') ? '&val=' + new Date().getTime() : '?val=' + new Date().getTime();
   }
 }

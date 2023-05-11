@@ -23,10 +23,15 @@ export class AuthService {
     });
   }
 
-  login(authUser: AuthData): Observable<User> {
-    return this.httpClient.post<User>(`${environment.apiUrl}/auth/login`, authUser).pipe(
+  static getToken(): string {
+    const user: AuthData = JSON.parse(localStorage.getItem('authData'));
+    return user.token;
+  }
+
+  login(authUser: AuthData): Observable<AuthData> {
+    return this.httpClient.post<AuthData>(`${environment.apiUrl}/auth/login`, authUser).pipe(
       tap(user => {
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('authData', JSON.stringify(user));
       })
     );
   }
@@ -40,12 +45,18 @@ export class AuthService {
   }
 
   getUser(): Observable<User> {
-    return this.user;
+    return this.httpClient.get<User>(`${environment.apiUrl}/users/currentUser`, {headers: {Authorization: `Bearer ${AuthService.getToken()}`}}).pipe(
+      tap(user => {
+        localStorage.setItem('user', JSON.stringify(user));
+      })
+    );
   }
 
   save(user: User): Observable<User> {
-    return new Observable<User>(subscriber => {
-      subscriber.next(user);
-    });
+    return this.httpClient.put<User>(`${environment.apiUrl}/users/currentUser`, user, {headers: {Authorization: `Bearer ${AuthService.getToken()}`}}).pipe(
+      tap(result => {
+        localStorage.setItem('user', JSON.stringify(result));
+      })
+    );
   }
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {AuthData} from '../../models/user.model';
 import {Router} from '@angular/router';
-import {ToastController} from "@ionic/angular";
+import {ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,9 @@ export class LoginPage implements OnInit {
 
   login(): void {
     this.authService.login(this.authData).subscribe(_ => {
-      this.router.navigate(['tabs', 'home']);
+      this.authService.getUser().subscribe(_ => {
+        this.router.navigate(['tabs', 'home']);
+      });
     }, error => {
       console.log(error);
       this.toastController.create({
